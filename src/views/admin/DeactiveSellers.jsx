@@ -48,7 +48,7 @@ const DeactiveSellers = () => {
                                     <td scope="row" className="px-4 py-3 font-medium whitespace-nowrap">{i}</td>
                                     <td scope="row" className="px-4 py-3 font-medium whitespace-nowrap">
 
-                                        <img className="w-10 h-10" src={`http://localhost:5173/images/category/${item}.jpg`} alt="" />
+                                        <img className="w-10 h-10" src={`.././../public/images/category/${item}.jpg`} alt="" />
                                     </td>
                                     <td scope="row" className="px-4 py-3 font-medium whitespace-nowrap">Mobin Mohammadi</td>
                                     <td scope="row" className="px-4 py-3 font-medium whitespace-nowrap">Mobin@gmail.com</td>

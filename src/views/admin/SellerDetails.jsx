@@ -9,7 +9,7 @@ const SellerDetails = () => {
           
           <div className="shrink-0">
             <img 
-              src="http://localhost:5173/images/admin1.jfif"
+              src="../../../public/images/admin1.jfif"
               className="w-40 h-40 object-cover rounded-md border-2 border-transparent bg-gray-600"
             />
           </div>

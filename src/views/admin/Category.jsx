@@ -60,7 +60,7 @@ const Category = () => {
                 <div className="w-1/4 whitespace-nowrap">
                   <img
                     className="w-12 h-12 object-cover rounded"
-                    src={`http://localhost:5173/images/category/${item}.jpg`}
+                    src={`.././../public/images/category/${item}.jpg`}
                     alt=""
                   />
                 </div>

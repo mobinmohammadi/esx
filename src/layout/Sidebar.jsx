@@ -31,7 +31,7 @@ const Sidebar = ({ showSiderbar, setShowSidebar }) => {
 
         <div className="h-17.5 flex justify-center items-center">
           <Link to="/" className="w-45 h-12.5">
-            <img className="w-full h-full" src="http:///localhost:5173/images/logo.png" alt="" />
+            <img className="w-full h-full" src=".././../public/images/logo.png" alt="" />
           </Link>
         </div>
         <ul className="px-4  flex flex-col gap-2 mt-5 & > *:cursor-pointer & > *:transition-all  & > *:rounded-sm transition-all & > *:py-4 & > *:px-3">

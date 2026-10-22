@@ -21,7 +21,7 @@ const Header = ({ showSiderbar, setShowSidebar }) => {
             </div>
             <div className="w-13 h-13 relative lg:w-12 lg:h-12 bg flex gap-5">
               <span className="absolute w-3 h-3 rounded-full right-0 top-0 bg-blue-700"></span>
-              <img className="bg-cover  w-full h-full rounded-full  " src="http://localhost:5173/images/admin1.jfif" alt="" /><div className="">
+              <img className="bg-cover  w-full h-full rounded-full  " src=".././../public/images/admin1.jfif" alt="" /><div className="">
               </div>
             </div>
           </div>
