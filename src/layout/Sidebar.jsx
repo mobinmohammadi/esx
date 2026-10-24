@@ -14,7 +14,7 @@ const Sidebar = ({ showSiderbar, setShowSidebar }) => {
   const Navigate = useNavigate()
 
   useEffect(() => {
-    const navs = getNav("admin")
+    const navs = getNav("seller")
     setNav(navs)
 
   }, [])

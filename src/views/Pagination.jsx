@@ -27,7 +27,7 @@ export default function Pagination({ pageNumber, setPageNumber, totalItem, parPa
     const createButton = () => {
         for (let i = startPage; i < endPage; i++) {
             btn.push(
-                <li key={i++} onClick={() => setPageNumber(i)} className={`${pageNumber === i ? "bg-indigo-300 shadow-lg shadow-indigo-300/50 text-white" : "bg-slate-100 hover:bg-indigo-400 hover:text-white text-[#d0d2d6] hover:shadow-indigo-500/50 shadow-lg bg-zinc-700 "} transition-all w-8.25 h-8.25 rounded-full flex justify-center items-center cursor-pointer`}>
+                <li key={i++} onClick={() => setPageNumber(i)} className={`${pageNumber === i ? "bg-indigo-300 shadow-lg shadow-indigo-300/50 text-white" : "bg-slate-100 hover:bg-indigo-400 hover:text-white text-[#d0d2d6] hover:shadow-indigo-500/50 shadow-lg bg-zinc-700 "} transition-all w-7 h-7 rounded-full flex justify-center items-center cursor-pointer text-xs`}>
                     {i}
                 </li>
             )
@@ -42,7 +42,7 @@ export default function Pagination({ pageNumber, setPageNumber, totalItem, parPa
 
     return (
         <ul className="flex gap-2">
-            {pageNumber > 1 && <li onClick={() => setPageNumber(pageNumber - 1)} className="w-8.25 h-8.25 bg-zinc-900 cursor-pointer rounded-full flex justify-center items-center text-[#d0d2d6]">
+            {pageNumber > 1 && <li onClick={() => setPageNumber(pageNumber - 1)} className="w-7 h-7 bg-zinc-900 cursor-pointer rounded-full flex justify-center items-center text-[#d0d2d6]">
                 <FaArrowLeft />
 
 
@@ -50,7 +50,7 @@ export default function Pagination({ pageNumber, setPageNumber, totalItem, parPa
             {
                 createButton()
             }
-             {pageNumber < totalPage && <li onClick={() => setPageNumber(pageNumber + 1)} className="w-8.25 h-8.25 bg-zinc-900 cursor-pointer rounded-full flex justify-center items-center text-[#d0d2d6]">
+             {pageNumber < totalPage && <li onClick={() => setPageNumber(pageNumber + 1)} className="w-7 h-7 bg-zinc-900 cursor-pointer rounded-full flex justify-center items-center text-[#d0d2d6]">
                 <FaArrowRight />
 
             </li>} 

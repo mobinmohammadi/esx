@@ -92,7 +92,7 @@ export const allNav = [
         title: 'Add Product',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/add-product"
+        path: "/seller/dashboard/add-product"
 
     },
         {
@@ -100,7 +100,7 @@ export const allNav = [
         title: 'All Product',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/all-product"
+        path: "/seller/dashboard/all-product"
 
     },
         {
@@ -108,7 +108,7 @@ export const allNav = [
         title: 'Discout Product',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/discount-product"
+        path: "/seller/dashboard/discount-product"
 
     },
         {
@@ -116,7 +116,7 @@ export const allNav = [
         title: 'Orders',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/orders"
+        path: "/seller/dashboard/orders"
 
     },
         {
@@ -124,7 +124,7 @@ export const allNav = [
         title: 'Payments',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/payments"
+        path: "/seller/dashboard/payments"
 
     },
         {
