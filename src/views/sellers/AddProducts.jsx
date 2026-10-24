@@ -129,7 +129,6 @@ const AddProduct = () => {
     
   };
 
-  // ───── ثبت فرم ─────
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -158,7 +157,6 @@ const AddProduct = () => {
     <div className="min-h-screen bg-[#6b72e0] p-4 md:p-8 font-sans">
 
       <div className="max-w-6xl mx-auto">
-        {/* هدر */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
           <h1 className="text-2xl font-semibold text-white">Add Product</h1>
           <Link
@@ -170,7 +168,6 @@ const AddProduct = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* ردیف ۱: نام و برند */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="name" className={labelClass}>
@@ -202,7 +199,6 @@ const AddProduct = () => {
             </div>
           </div>
 
-          {/* ردیف ۲: دسته‌بندی و موجودی */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* dropdown دسته‌بندی */}
             <div className="relative" ref={dropdownRef}>
@@ -269,7 +265,6 @@ const AddProduct = () => {
             </div>
           </div>
 
-          {/* ردیف ۳: قیمت و تخفیف */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="price" className={labelClass}>
@@ -301,7 +296,6 @@ const AddProduct = () => {
             </div>
           </div>
 
-          {/* توضیحات */}
           <div>
             <label htmlFor="description" className={labelClass}>
               Description
@@ -317,7 +311,6 @@ const AddProduct = () => {
             ></textarea>
           </div>
 
-          {/* آپلود عکس */}
           <div className="flex flex-wrap gap-4 pt-2 mt-12">
             {imageShow.map((img, i) => (
               <>
@@ -358,7 +351,6 @@ const AddProduct = () => {
             </label>
           </div>
 
-          {/* دکمه ثبت */}
           <div className="pt-4">
             <button
               type="submit"

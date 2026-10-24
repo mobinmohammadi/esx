@@ -6,6 +6,7 @@ import { MdPayment } from "react-icons/md";
 import { FaUserTimes } from "react-icons/fa";
 import { IoGitPullRequest } from "react-icons/io5";
 import { IoIosChatbubbles } from "react-icons/io";
+import { User2 } from "lucide-react";
 
 
 
@@ -63,7 +64,7 @@ export const allNav = [
         path: "/admin/dashboard/deactive-sellers"
 
     },
-     {
+    {
         id: 7,
         title: 'Sellers Request',
         icons: <IoGitPullRequest />,
@@ -71,7 +72,7 @@ export const allNav = [
         path: "/admin/dashboard/Sellers-Request"
 
     },
-     {
+    {
         id: 8,
         title: 'Live Chat',
         icons: <IoIosChatbubbles />,
@@ -79,7 +80,7 @@ export const allNav = [
         path: "/admin/dashboard/Live-Chat"
 
     },
-     {
+    {
         id: 1,
         title: 'Dashboard',
         icons: <RxDashboard />,
@@ -87,7 +88,7 @@ export const allNav = [
         path: "/seller/dashboard"
 
     },
-        {
+    {
         id: 2,
         title: 'Add Product',
         icons: <RxDashboard />,
@@ -95,7 +96,7 @@ export const allNav = [
         path: "/seller/dashboard/add-product"
 
     },
-        {
+    {
         id: 3,
         title: 'All Product',
         icons: <RxDashboard />,
@@ -103,7 +104,7 @@ export const allNav = [
         path: "/seller/dashboard/all-product"
 
     },
-        {
+    {
         id: 4,
         title: 'Discout Product',
         icons: <RxDashboard />,
@@ -111,7 +112,7 @@ export const allNav = [
         path: "/seller/dashboard/discount-product"
 
     },
-        {
+    {
         id: 5,
         title: 'Orders',
         icons: <RxDashboard />,
@@ -119,7 +120,7 @@ export const allNav = [
         path: "/seller/dashboard/orders"
 
     },
-        {
+    {
         id: 6,
         title: 'Payments',
         icons: <RxDashboard />,
@@ -127,20 +128,28 @@ export const allNav = [
         path: "/seller/dashboard/payments"
 
     },
-        {
+    {
         id: 7,
         title: 'Chat-Customer',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/chat-customer"
+        path: "/seller/dashboard/chat-customer"
 
     },
-        {
-        id: 1,
+    {
+        id: 8,
         title: 'Chat-Support',
         icons: <RxDashboard />,
         role: 'seller',
-        path: "/seller/chat-support"
+        path: "/seller/dashboard/chat-admin"
+
+    },
+    {
+        id: 8,
+        title: 'Profail-Setting',
+        icons: <User2 />,
+        role: 'seller',
+        path: "/seller/dashboard/profile-setting"
 
     },
 

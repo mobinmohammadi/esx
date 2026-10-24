@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Pagination from '../Pagination';
-import { LuSquareArrowDown } from 'react-icons/lu';
-import { Link } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -28,8 +26,7 @@ const DiscountProduct = () => {
           searchValue={searchValue}
         />
         <div className="relative mt-5 overflow-x-auto bg-[#6a5fdf] py-4 px-2 rounded-sm">
-          <table className="w-full min-w-[900px] text-sm text-left text-[#d0d2d6] border-collapse">
-            {/* ───── هدر ───── */}
+          <table className="w-full min-w-225 text-sm text-left text-[#d0d2d6] border-collapse">
             <thead>
               <tr className="font-bold *:text-xs border-b border-slate-700">
                 <th className="py-3 px-2 w-[5%]">NO</th>
@@ -45,7 +42,6 @@ const DiscountProduct = () => {
               </tr>
             </thead>
 
-            {/* ───── بدنه ───── */}
             <tbody>
               <tr className="font-medium *:text-[10px]  border-b border-slate-700 align-top">
                 <td className="py-3 px-2 whitespace-nowrap">1</td>
@@ -76,7 +72,6 @@ const DiscountProduct = () => {
 
               </tr>
 
-              {/* ───── ردیف جزئیات (expand) ───── */}
               <tr
                 className={`bg-[#8288ed] transition-all duration-300 ease-in-out ${state
                   ? "opacity-100 visible"
@@ -100,7 +95,6 @@ const DiscountProduct = () => {
             </tbody>
           </table>
 
-          {/* ───── Pagination ───── */}
           <div className="flex justify-end pr-5 pt-8">
             <Pagination
               pageNumber={currentPage}

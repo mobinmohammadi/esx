@@ -1,6 +1,7 @@
 import { lazy } from "react"
 import LiveChat from "../../views/admin/LiveChat"
 import DetailsOrder from "../../views/admin/DetailsOrder"
+import ProfileSettings from "../../views/sellers/ProfileSettings"
 
 
 const AdminDashboard = lazy(() => import("../../views/admin/AdminDashboard"))
@@ -61,8 +62,8 @@ export const adminRoutes = [
         role: "admin"
     },
          {
-        path: '/admin/dashboard/Details-Order/:Id',
-        element: <DetailsOrder />,
+        path: '/admin/dashboard/profile-setting',
+        element: <ProfileSettings />,
         role: "admin"
     },
     
