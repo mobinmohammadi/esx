@@ -64,15 +64,15 @@ const AllProducts = () => {
                 <td className="py-3 px-1">Pending</td>
                 <td className="py-3 px-1">Pending</td>
                 <td className="py-3 px-2 flex *:text-xl gap-2 *:p-1 *:rounded-sm *:cursor-pointer">
-                  <div className="bg-yellow-600 text-white">
+                  <Link to="/seller/dashboard/edit-product/30" className="bg-yellow-600 text-white">
                     <FaRegEdit />
-                  </div>
-                  <div className="bg-sky-600">
+                  </Link>
+                  <Link className="bg-sky-600">
                     <FaEye />
-                  </div>
-                  <div className=" bg-red-600">
+                  </Link>
+                  <Link className=" bg-red-600">
                     <MdDelete />
-                  </div>
+                  </Link>
                 </td>
 
               </tr>

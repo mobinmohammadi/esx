@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { seller_login } from "../../store/Reducers/authReducers";
 
 
 const Login = () => {
 
-
+    const dispath = useDispatch()
     const [loginState , setLoginState] = useState({
         email : "",
         password : ""
@@ -21,8 +23,13 @@ const Login = () => {
     const sendLoginHandler = (e) => {
         e.preventDefault()
         console.log(loginState);
+        dispath(seller_login(loginState))
         
     }
+
+
+
+    
 
     return (
         <div className="min-w-screen min-h-screen bg-[#cdcae9] flex justify-center items-center">

@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom"
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { PropagateLoader } from 'react-spinners';
+import { loaderCssOverride } from "../utils/utils";
+import {
+    seller_register,
+    messageClear
+} from "../../store/Reducers/authReducers"
+import toast from "react-hot-toast";
 
 
 
@@ -9,6 +17,11 @@ import { useState } from "react";
 const Register = () => {
 
 
+
+
+    const dispatch = useDispatch()
+    const { loader, errorMessage,
+        successMessage } = useSelector(state => state.auth)
 
     const [state, setState] = useState({
         name: "",
@@ -27,9 +40,26 @@ const Register = () => {
 
     const sendFormSubmit = (e) => {
         e.preventDefault()
-        console.log(state);
-        
+        dispatch(seller_register(state))
+
     }
+
+
+    useEffect(() => {
+        if (errorMessage) {
+            toast.error(errorMessage)
+            dispatch(messageClear())
+        }
+        if (successMessage) {
+            toast.success(successMessage)
+            setTimeout(() => {
+                dispatch(messageClear())
+
+            }, 1000);
+        }
+
+    }, [errorMessage, successMessage])
+
 
     return (
         <div className="min-w-screen min-h-screen bg-[#cdcae9] flex justify-center items-center">
@@ -66,8 +96,9 @@ const Register = () => {
                             <label htmlFor="checkbox" >I agree to privacy policy & treams </label>
                         </div>
 
-                        <button className="w-full bg-slate-800 py-3 transition-all mb-3 px-2 rounded-md cursor-pointer hover:shadow-blue-300 hover:shadow-lg " >Sign Up</button>
-                        <div className="flex items-center justify-center gap-2">
+                        <button disabled={loader ? true : false} className="w-full bg-slate-800 mt-3 py-3 transition-all mb-3 px-2 rounded-md cursor-pointer hover:shadow-blue-300 hover:shadow-lg " >
+                            {loader ? <PropagateLoader cssOverride={loaderCssOverride} /> : 'Sign up'}
+                        </button>                        <div className="flex items-center justify-center gap-2">
                             <p>Already Have an account   ?  </p>
                             <Link to='/login' className="hover:text-red-700 transition-all">Sign in</Link>
                         </div>

@@ -69,9 +69,9 @@ const Orders = () => {
                 View
               </Link>
             </div>
-            <div onClick={() => (setState(!state))} className="w-[8%] mt-2 flex  cursor-pointer text-lg">
+            <Link to='/seller/dashboard/order-details/:2' onClick={() => (setState(!state))} className="w-[8%] mt-2 flex  cursor-pointer text-lg">
               <FaEye />
-            </div>
+            </Link>
 
           </div>
          

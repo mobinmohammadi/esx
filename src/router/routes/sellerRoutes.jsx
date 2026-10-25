@@ -1,15 +1,16 @@
 import { lazy } from 'react';
-import AllProducts from '../../views/sellers/AllProducts';
 const Home = lazy(() => import('../../views/Home'))
+const AllProducts = lazy(() => import('../../views/sellers/AllProducts'))
 const SellerDashboard = lazy(() => import('../../views/sellers/SellerDashboard'))
 const AddProduct = lazy(() => import('../../views/sellers/AddProducts'))
-import DiscountProduct from './../../views/sellers/DiscountProduct';
-import Orders from '../../views/sellers/Orders';
-import Payments from '../../views/sellers/Payments';
-import ChatToCustomer from '../../views/sellers/ChatToCustomer';
-import ChatToAdmin from '../../views/sellers/ChatToAdmin';
-import ProfileSettings from '../../views/sellers/ProfileSettings';
-
+const DiscountProduct = lazy(() => import('../../views/sellers/DiscountProduct'))
+const Orders = lazy(() => import('../../views/sellers/Orders'))
+const Payments = lazy(() => import('../../views/sellers/Payments'))
+const ChatToCustomer = lazy(() => import('../../views/sellers/ChatToCustomer'))
+const ChatToAdmin = lazy(() => import('../../views/sellers/ChatToAdmin'))
+const ProfileSettings = lazy(() => import('../../views/sellers/ProfileSettings'))
+const EditProduct = lazy(() => import('../../views/sellers/EditProduct'))
+const OrderDetails = lazy(() => import('../../views/sellers/OrderDetails'))
 
 
 export const SellerRoutes = [
@@ -75,6 +76,19 @@ export const SellerRoutes = [
         element: <ProfileSettings />,
         ability: ["active", "deactive", 'pending']
     },
+    {
+        path: '/seller/dashboard/edit-product/:ProductID',
+        element: <EditProduct />,
+        role: "seller",
+        status: 'active'
+    },
+    {
+        path: '/seller/dashboard/order-details/:OrderID',
+        element: <OrderDetails />,
+        role: "seller",
+        status: 'active'
+    },
+
 
 
 
