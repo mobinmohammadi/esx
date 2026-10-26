@@ -5,8 +5,22 @@ import { FaUsers } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { FaUserTimes } from "react-icons/fa";
 import { IoGitPullRequest } from "react-icons/io5";
-import { IoIosChatbubbles } from "react-icons/io";
-import { User2 } from "lucide-react";
+import { IoIosChatbubbles, IoMdAdd } from "react-icons/io";
+import { CiDiscount1 } from "react-icons/ci";
+import { FaCartArrowDown } from "react-icons/fa";
+import { MdOutlinePayment } from "react-icons/md";
+import { IoChatbubblesOutline } from "react-icons/io5";
+import { RiShoppingCartFill } from "react-icons/ri";
+import { IoChatbubblesSharp } from "react-icons/io5";
+
+import { FaUserCircle } from "react-icons/fa";
+
+
+
+
+
+
+
 
 
 
@@ -91,7 +105,7 @@ export const allNav = [
     {
         id: 2,
         title: 'Add Product',
-        icons: <RxDashboard />,
+        icons: <IoMdAdd />,
         role: 'seller',
         path: "/seller/dashboard/add-product"
 
@@ -99,7 +113,7 @@ export const allNav = [
     {
         id: 3,
         title: 'All Product',
-        icons: <RxDashboard />,
+        icons: <FaCartArrowDown />,
         role: 'seller',
         path: "/seller/dashboard/all-product"
 
@@ -107,7 +121,7 @@ export const allNav = [
     {
         id: 4,
         title: 'Discout Product',
-        icons: <RxDashboard />,
+        icons: <CiDiscount1 />,
         role: 'seller',
         path: "/seller/dashboard/discount-product"
 
@@ -115,7 +129,7 @@ export const allNav = [
     {
         id: 5,
         title: 'Orders',
-        icons: <RxDashboard />,
+        icons: <RiShoppingCartFill />,
         role: 'seller',
         path: "/seller/dashboard/orders"
 
@@ -123,7 +137,7 @@ export const allNav = [
     {
         id: 6,
         title: 'Payments',
-        icons: <RxDashboard />,
+        icons: <MdOutlinePayment />,
         role: 'seller',
         path: "/seller/dashboard/payments"
 
@@ -131,7 +145,7 @@ export const allNav = [
     {
         id: 7,
         title: 'Chat-Customer',
-        icons: <RxDashboard />,
+        icons: <IoChatbubblesOutline />,
         role: 'seller',
         path: "/seller/dashboard/chat-customer"
 
@@ -139,7 +153,7 @@ export const allNav = [
     {
         id: 8,
         title: 'Chat-Support',
-        icons: <RxDashboard />,
+        icons: <IoChatbubblesSharp />,
         role: 'seller',
         path: "/seller/dashboard/chat-admin"
 
@@ -147,7 +161,8 @@ export const allNav = [
     {
         id: 8,
         title: 'Profail-Setting',
-        icons: <User2 />,
+
+        icons: <FaUserCircle />,
         role: 'seller',
         path: "/seller/dashboard/profile-setting"
 

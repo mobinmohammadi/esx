@@ -3,28 +3,28 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 import { getNav } from "../navigations"
 import { TbLogout2 } from "react-icons/tb";
 import { IoMdMenu } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Sidebar = ({ showSiderbar, setShowSidebar }) => {
 
 
-
+  const { role } = useSelector(state => state.auth)
+  
 
   const [allNav, setNav] = useState([])
-  const Navigate = useNavigate()
 
   useEffect(() => {
-    const navs = getNav("seller")
+    const navs = getNav(role)
     setNav(navs)
 
-  }, [])
+  }, [role])
 
 
   const { pathname } = useLocation()
 
   return (
     <div>
-
       <div className={`${showSiderbar
         ? "left-0" : " -left-65 lg:left-0 "} duration-200 w-65    fixed sm:block bg-[#e6e7fb] z-50 top-0 h-screen
         shadow-[0_0_15px_0_rgb(34_41_47/5%)] transition-all `}>

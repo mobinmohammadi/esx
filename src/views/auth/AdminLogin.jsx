@@ -5,6 +5,7 @@ import { PropagateLoader } from 'react-spinners'
 import { useEffect } from "react";
 import toast from 'react-hot-toast'
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const AdminLogin = () => {
 
@@ -34,6 +35,7 @@ const AdminLogin = () => {
 
     }
 
+
     const loaderCssOverride = {
         display: "flex",
         alignItems: "center",
@@ -45,14 +47,13 @@ const AdminLogin = () => {
         if (errorMessage) {
             toast.error(errorMessage)
             dispatch(messageClear())
+
         }
         if (successMessage) {
             toast.success(successMessage)
-            setTimeout(() => {
-                Navigate("/")
-                dispatch(messageClear())
 
-            }, 1000);
+            console.log("sucsuss");
+
         }
 
     }, [errorMessage, successMessage])

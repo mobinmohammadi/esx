@@ -1,35 +1,50 @@
 import { Link } from "react-router-dom"
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { seller_login } from "../../store/Reducers/authReducers";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { messageClear, seller_login } from "../../store/Reducers/authReducers";
+import { toast } from 'react-hot-toast';
 
 
 const Login = () => {
-
+    const { successMessage,
+        errorMessage,
+        loader } = useSelector(state => state.auth)
     const dispath = useDispatch()
-    const [loginState , setLoginState] = useState({
-        email : "",
-        password : ""
+    const [loginState, setLoginState] = useState({
+        email: "",
+        password: ""
     })
 
     const onChangeInput = (e) => {
         setLoginState({
             ...loginState,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
     const sendLoginHandler = (e) => {
         e.preventDefault()
-        console.log(loginState);
         dispath(seller_login(loginState))
-        
+
     }
 
+    useEffect(() => {
+        if (errorMessage) {
+            toast.error(errorMessage)
+            dispath(messageClear())
+        }
+        if (successMessage) {
+            toast.success(successMessage)
+            dispath(messageClear())
+
+        }
+    }, [errorMessage, successMessage])
 
 
-    
+
+
+
 
     return (
         <div className="min-w-screen min-h-screen bg-[#cdcae9] flex justify-center items-center">
@@ -42,18 +57,18 @@ const Login = () => {
                         Please Sign in  Your Account
                     </p>
                     <form onSubmit={e => sendLoginHandler(e)} action="">
-                       
+
                         <div className="flex flex-col gap-1 mb-1 ">
 
                             <label htmlFor="name" >Email</label>
-                            <input value={loginState.email} onChange={onChangeInput}  name="email" placeholder="mobin@gmail.com" type="email" className="px-3 py-2 border border-slate-400 bg-transparent rounded-md" />
+                            <input value={loginState.email} onChange={onChangeInput} name="email" placeholder="mobin@gmail.com" type="email" className="px-3 py-2 border border-slate-400 bg-transparent rounded-md" />
                         </div>
                         <div className="flex flex-col gap-1 mb-1 ">
 
                             <label htmlFor="name" >Password</label>
                             <input value={loginState.password} onChange={onChangeInput} name="password" placeholder="*********" type="text" className="px-3 py-2 border border-slate-400 bg-transparent rounded-md" />
                         </div>
-                     
+
 
                         <button className="w-full bg-slate-800 mt-3 py-3 transition-all mb-3 px-2 rounded-md cursor-pointer hover:shadow-blue-300 hover:shadow-lg " >Sign in</button>
                         <div className="flex items-center justify-center gap-2">
