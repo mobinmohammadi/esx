@@ -1,10 +1,10 @@
 import { lazy } from "react"
-import LiveChat from "../../views/admin/LiveChat"
 import DetailsOrder from "../../views/admin/DetailsOrder"
 import ProfileSettings from "../../views/sellers/ProfileSettings"
 
 
 const AdminDashboard = lazy(() => import("../../views/admin/AdminDashboard"))
+const LiveChat = lazy(() => import("../../views/admin/LiveChat"))
 const AdminOrders = lazy(() => import("../../views/admin/AdminOrders"))
 const Sellers = lazy(() => import("../../views/admin/Sellers"))
 const Category = lazy(() => import("../../views/admin/Category"))

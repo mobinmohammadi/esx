@@ -5,7 +5,7 @@ import { PropagateLoader } from 'react-spinners'
 import { useEffect } from "react";
 import toast from 'react-hot-toast'
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
+
 
 const AdminLogin = () => {
 
@@ -27,10 +27,14 @@ const AdminLogin = () => {
         })
     }
 
-    const sendLoginHandler = (e) => {
+    const sendLoginHandler = async(e) => {
         e.preventDefault()
         console.log(state);
-        dispatch(admin_login(state))
+        const res = await dispatch(admin_login(state))
+        if(res.meta.requestStatus === 'fulfilled'){
+            Navigate("/admin/dashboard")
+        }
+        
 
 
     }

@@ -3,6 +3,7 @@ import api from './../../api/api';
 import { jwtDecode } from "jwt-decode"
 
 
+
 export const admin_login = createAsyncThunk(
     'auth/admin_login',
     async (info, { rejectWithValue, fulfillWithValue }) => {
@@ -12,10 +13,12 @@ export const admin_login = createAsyncThunk(
             const { data } = await api.post('/admin-login', info, {
                 withCredentials: true
             })
+            console.log('data ==> ' ,data);
+            
             localStorage.setItem("accessToken", data.token)
-
-            console.log('data ==> ', data)
-
+            
+            console.log('data ==> ', data.response)
+            
             return fulfillWithValue(data)
         } catch (error) {
             console.log("error ===> ", error.response.data)
@@ -136,12 +139,12 @@ export const authReducer = createSlice({
                 state.loader = true
             })
             .addCase(admin_login.fulfilled, (state, { payload }) => {
-
+                
                 state.loader = false
                 state.successMessage = `welcom sir`
                 state.token = payload.token
                 state.role = returnRole(payload.token)
-
+                
 
             })
             .addCase(admin_login.rejected, (state, { payload }) => {
