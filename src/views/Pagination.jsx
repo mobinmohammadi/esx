@@ -26,9 +26,10 @@ export default function Pagination({ pageNumber, setPageNumber, totalItem, parPa
 
     const createButton = () => {
         for (let i = startPage; i < endPage; i++) {
+            const page = i
             btn.push(
-                <li key={i++} onClick={() => setPageNumber(i)} className={`${pageNumber === i ? "bg-indigo-300 shadow-lg shadow-indigo-300/50 text-white" : "bg-slate-100 hover:bg-indigo-400 hover:text-white text-[#d0d2d6] hover:shadow-indigo-500/50 shadow-lg bg-zinc-700 "} transition-all w-7 h-7 rounded-full flex justify-center items-center cursor-pointer text-xs`}>
-                    {i}
+                <li key={page} onClick={() => setPageNumber(page)} className={`${pageNumber === page ? "bg-indigo-300 shadow-lg shadow-indigo-300/50 text-white" : "bg-slate-100 hover:bg-indigo-400 hover:text-white text-[#d0d2d6] hover:shadow-indigo-500/50 shadow-lg bg-zinc-700 "} transition-all w-7 h-7 rounded-full flex justify-center items-center cursor-pointer text-xs`}>
+                    {page}
                 </li>
             )
 

@@ -92,7 +92,7 @@ export const SellerRoutes = [
     visbility: ["active", "deactive", "pending"],
   },
   {
-    path: "/seller/dashboard/edit-product/:ProductID",
+    path: "/seller/dashboard/edit-product/:productId",
     element: <EditProduct />,
     role: "seller",
     status: "active",

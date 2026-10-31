@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { toast } from 'react-hot-toast';
 
 
 const Login = () => {
+    const navigate = useNavigate()
     const { successMessage,
         errorMessage,
         loader } = useSelector(state => state.auth)
@@ -37,6 +38,7 @@ const Login = () => {
         if (successMessage) {
             toast.success(successMessage)
             dispath(messageClear())
+            navigate('/seller/dashboard')
 
         }
     }, [errorMessage, successMessage])

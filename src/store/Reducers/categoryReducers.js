@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "./../../api/api";
-import { useEffect } from "react";
 
 export const category_add = createAsyncThunk(
   "category/category_add",
@@ -23,8 +22,8 @@ export const category_add = createAsyncThunk(
   },
 );
 
-export const category_get = createAsyncThunk(
-  "category/category_get",
+export const get_category = createAsyncThunk(
+  "category/get_category",
   async (
     { searchValue, page, parPage },
     { rejectWithValue, fulfillWithValue },
@@ -36,7 +35,6 @@ export const category_get = createAsyncThunk(
           withCredentials: true,
         },
       );
-      console.log("data ==> ", data);
 
       return fulfillWithValue(data);
     } catch (error) {
@@ -76,11 +74,11 @@ export const categoryReducer = createSlice({
         state.errorMessage = payload.error;
       })
 
-      .addCase(category_get.pending, (state) => {
+      .addCase(get_category.pending, (state) => {
         state.loader = true;
       })
 
-      .addCase(category_get.fulfilled, (state, { payload }) => {
+      .addCase(get_category.fulfilled, (state, { payload }) => {
         state.loader = false;
         state.categoris = payload.category;
         state.totalCategory = payload.totalCategory;
