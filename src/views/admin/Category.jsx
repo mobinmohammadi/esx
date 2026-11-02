@@ -6,7 +6,7 @@ import { RiImageAddFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import {
   category_add,
-  category_get,
+  get_category,
   messageClear,
 } from "../../store/Reducers/categoryReducers";
 import { loaderCssOverride } from "../utils/utils";
@@ -70,7 +70,7 @@ const Category = () => {
       dispatch(messageClear());
     }
   }, [successMessage, errorMessage]);
-  dispatch(category_get);
+  dispatch(get_category);
 
   useEffect(() => {
     const obj = {
@@ -78,7 +78,7 @@ const Category = () => {
       page: parseInt(currentPage),
       searchValue,
     };
-    dispatch(category_get(obj));
+    dispatch(get_category(obj));
   }, [currentPage, searchValue, parPage]);
 
   return (
