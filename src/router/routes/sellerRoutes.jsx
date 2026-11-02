@@ -89,7 +89,8 @@ export const SellerRoutes = [
   {
     path: "/seller/dashboard/profile-setting",
     element: <ProfileSettings />,
-    visbility: ["active", "deactive", "pending"],
+    role: "seller",
+    visibility: ["active", "deactive", "pending"],
   },
   {
     path: "/seller/dashboard/edit-product/:productId",
