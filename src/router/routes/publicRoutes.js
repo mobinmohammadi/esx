@@ -1,4 +1,5 @@
 import { lazy } from "react"
+import UnderDevelopment from "../../views/UnderDevelopment"
 
 
 
@@ -14,7 +15,7 @@ const Unauthorized = lazy(() => import("../../views/Unauthorized"))
 const publicRoutes = [
     {
         path: '/',
-        element: <Home />,
+        element: <UnderDevelopment />,
     },
     {
         path: "/login",
