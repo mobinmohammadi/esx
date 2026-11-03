@@ -52,7 +52,7 @@ export const adminRoutes = [
     },
     
       {
-        path: '/admin/dashboard/Sellers-Details/:sellerid',
+        path: '/admin/dashboard/Sellers-Details/:sellerId',
         element: <SellerDetails />,
         role: "admin"
     },

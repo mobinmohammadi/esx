@@ -4,7 +4,7 @@ import {
   messageClear,
   update_profail,
 } from "../../store/Reducers/authReducers";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ProfileSettings() {
@@ -20,25 +20,22 @@ export default function ProfileSettings() {
   );
 
   const [state, setState] = useState({
-    division: userInfo.shopInfo.division || "",
-    district: userInfo.shopInfo.district || "",
-    shopname: userInfo.shopInfo.shopname || "",
-    sub_district: userInfo.shopInfo.sub_district || "",
+    division: userInfo.shopInfo?.division || "",
+    district: userInfo.shopInfo?.district || "",
+    shopname: userInfo.shopInfo?.shopname || "",
+    sub_district: userInfo.shopInfo?.sub_district || "",
   });
   const dispatch = useDispatch();
 
   const changerProfail = (e) => {
     const newImage = e.target.files[0];
-
     dispatch(update_profail(newImage));
   };
 
   useEffect(() => {
     if (successMessage) {
       toast.success(successMessage);
-
-      dispatch(messageClear());
-      console.log("djh");
+      dispatch(messageClear())
     }
     if (errorMessage) {
       toast.error(errorMessage);
@@ -59,7 +56,7 @@ export default function ProfileSettings() {
         <div className="bg-[#7b7dd4] rounded-xl p-6 shadow-md">
           {/* بخش عکس پروفایل */}
           <div className="flex justify-center mb-6">
-            <div className="w-42 h-58 bg-gray-400 overflow-hidden rounded-sm border-2 border-white/20">
+            <div className="w-40 h-40 bg-gray-400 overflow-hidden rounded-sm border-2 border-white/20">
               <label htmlFor="upload-image">
                 {/* به جای src، آدرس عکس واقعی خود را قرار دهید */}
                 <input
@@ -95,23 +92,23 @@ export default function ProfileSettings() {
             <div className="space-y-2 text-sm">
               <p>
                 <span className="text-gray-300">Name:</span>
-                {userInfo.name}{" "}
+                {userInfo?.name}{" "}
               </p>
               <p>
-                <span className="text-gray-300">Email:</span> {userInfo.email}
+                <span className="text-gray-300">Email:</span> {userInfo?.email}
               </p>
               <p>
-                <span className="text-gray-300">Role:</span> {userInfo.role}
+                <span className="text-gray-300">Role:</span> {userInfo?.role}
               </p>
               <p>
                 <span className="text-gray-300">Status:</span> 
                 
-                {userInfo.status}
+                {userInfo?.status}
               </p>
               <div className="flex items-center gap-2">
                 <span className="text-gray-300">Payment Account :</span>
                 <span className="bg-yellow-400 text-black px-2 py-0.5 rounded text-xs font-semibold">
-                  {userInfo.payment}
+                  {userInfo?.payment}
                 </span>
               </div>
             </div>
